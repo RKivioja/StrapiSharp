@@ -19,4 +19,16 @@ public class UpdateRequest : RequestBase
 	{
 		SetBody(body);
 	}
+
+	/// <summary>
+	/// Creates the <see cref="RequestMethod.Put"/> request and sets the path and body.
+	/// </summary>
+	/// <param name="contentType">The Strapi type of this request.</param>
+	/// <param name="documentId">The Strapi document ID of the record to update.</param>
+	/// <param name="body">The JSON body string.</param>
+	public UpdateRequest(string contentType, string documentId, string body)
+		: base(RequestMethod.Put, contentType, $"/{documentId}")
+	{
+		SetBody(body);
+	}
 }
